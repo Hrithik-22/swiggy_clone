@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid black;
+  border: 10px solid black;
   padding: 0.25rem;
 }
 
@@ -20,7 +20,7 @@
 
 .card {
   width: 15rem;
-  border: 1px solid black;
+  border: 10px solid black;
   padding: 10px;
   margin: 10px;
 }

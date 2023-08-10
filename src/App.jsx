@@ -6,7 +6,8 @@ import HeaderComponent from "./components/header";
 
 import Body from "./components/body";
 
-import { image_cdn, RestaurantList, RestaurantCard } from "./constant";
+import Footer from "./components/footer";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 // const heading = React.createElement("h1", { id: "title" }, "Heading 1");
@@ -41,9 +42,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
  *  -Links
  */
 
-const Footer = () => {
-  return <h4>Footer</h4>;
-};
+
 
 const AppLayout = () => {
   return (

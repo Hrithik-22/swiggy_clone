@@ -1,5 +1,5 @@
-import { image_cdn, RestaurantList, RestaurantCard } from "../constant";
-
+import {  RestaurantList  } from "../constant";
+import RestaurantCard from "./RestaurantCard";
 const Body = () => {
   return (
     <div className="restaurantlist">

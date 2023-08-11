@@ -2,11 +2,12 @@ import React from "react";
 
 import ReactDOM from "react-dom/client";
 
-import HeaderComponent from "./components/header";
+import HeaderComponent from "./components/Header";
 
 import Body from "./components/body";
 
-import Footer from "./components/footer";
+
+import Footer from "./components/Footer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

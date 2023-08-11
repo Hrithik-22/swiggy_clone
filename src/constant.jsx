@@ -526,18 +526,3 @@ export const RestaurantList = [
 export const image_cdn =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 
-export const RestaurantCard = ({
-  name,
-  cuisines,
-  avgRatingString,
-  cloudinaryImageId,
-}) => {
-  return (
-    <div className="card">
-      <img src={image_cdn + cloudinaryImageId} />
-      <h2>{name}</h2>
-      <h3>{cuisines.join(",")}</h3>
-      <h4>{avgRatingString} rating</h4>
-    </div>
-  );
-};

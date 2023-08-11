@@ -9,7 +9,7 @@ import { useState } from "react";
 
 function filterData(searchText,restaurants){
   const filterData=restaurants.filter((restaurant)=>{
-    restaurant.info.name.toLowerCase().includes(searchText.toLowerCase());
+    restaurant.info.name.includes(searchText);
   });
   return filterData;
 }

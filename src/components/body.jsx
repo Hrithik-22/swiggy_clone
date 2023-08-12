@@ -3,20 +3,27 @@ import RestaurantCard from "./RestaurantCard";
 import { useState } from "react";
 
 // what is state?
-// what is hooks?
-// what is useState? 
+// what is hooks? its just a function, 
+
+// what is useState?  
+// useState is a hook which gives us react var so that we can rerender any data.
+// useState react variable agar tereko banana hai toh
 // Why also...
 
 function filterData(searchText,restaurants){
-  const filterData=restaurants.filter((restaurant)=>{
-    restaurant.info.name.includes(searchText);
+  const filters=restaurants.filter((restaurant)=>{
+    return  restaurant.info.name.toLowerCase().includes(searchText.toLowerCase());
   });
-  return filterData;
+  return filters;
 }
+
+
 
 const Body = () => {
   const [searchText,setSearchTxt]=useState("");
   const [restaurants,setRestaurants] = useState(RestaurantList);
+  // const filterRestaurant=filterData(searchText,restaurants);
+    
   return (
     <>
       <div className="search-container">
@@ -26,13 +33,16 @@ const Body = () => {
         ></input>
         <button 
         className="search-btn" 
-        onClick={()=>{
+        onClick={
+          ()=>{
           // need to filter the data
           const data=filterData(searchText,restaurants);
           //update the state-restaurants
           setRestaurants(data);
-        }}>
-          Search
+        
+          }
+        }>
+          Search-{searchText}
         </button>
       </div>
       <div className="restaurantlist">
@@ -43,9 +53,14 @@ const Body = () => {
           <RestaurantCard {...RestaurantList[3].info} />
           <RestaurantCard {...RestaurantList[4].info} />
           <RestaurantCard {...RestaurantList[5].info} /> */}
-        {restaurants.map((restaurant) => {
-          return <RestaurantCard {...restaurant.info} key={restaurant.info.id} />;
-        })}
+        {
+        restaurants.map((restaurant) => {
+          return (
+          <RestaurantCard {...restaurant.info} key={restaurant.info.id}
+           />
+           );
+        })
+        }
       </div>
     </>
   );

@@ -56,3 +56,6 @@ const AppLayout = () => {
 };
 
 root.render(<AppLayout />);
+
+
+// React only tracks variables which are react state variables.

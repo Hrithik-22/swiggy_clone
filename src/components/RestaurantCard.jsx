@@ -3,8 +3,8 @@ import {  image_cdn  } from "../constant";
 
  const RestaurantCard = ({
     name,
-    cuisines,
-    avgRatingString,
+    cuisines,sla,
+    
     cloudinaryImageId,
   }) => {
     return (
@@ -12,7 +12,7 @@ import {  image_cdn  } from "../constant";
         <img src={image_cdn + cloudinaryImageId} />
         <h2>{name}</h2>
         <h3>{cuisines.join(",")}</h3>
-        <h4>{avgRatingString} rating</h4>
+        <h4>{sla.deliveryTime} mins</h4>
       </div>
     );
   };

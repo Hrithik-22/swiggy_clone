@@ -1,0 +1,19 @@
+
+// what is state?
+// what is hooks? its just a function,
+
+// what is useState?
+// useState is a hook which gives us react var so that we can rerender any data.
+// useState react variable agar tereko banana hai toh
+// Why also...
+
+API Links ->
+https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.2961189&lng=73.2034805&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING
+
+
+// Components renders when props or state changes.
+
+//useEffect(callback function, dependency array)
+
+
+// When the dependency array is empty, then the callback function will be called once.

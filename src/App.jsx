@@ -6,7 +6,6 @@ import HeaderComponent from "./components/header";
 
 import Body from "./components/body";
 
-
 import Footer from "./components/footer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -43,8 +42,6 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
  *  -Links
  */
 
-
-
 const AppLayout = () => {
   return (
     <div>
@@ -56,6 +53,5 @@ const AppLayout = () => {
 };
 
 root.render(<AppLayout />);
-
 
 // React only tracks variables which are react state variables.

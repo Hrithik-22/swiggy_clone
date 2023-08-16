@@ -38,7 +38,18 @@ const Body = () => {
     );
   }
 
-  return allRestaurants.length === 0 ? (
+  // When we dont have anything in allRestaurants
+  // not render component.
+  if (!allRestaurants) {
+    return null;
+  }
+
+  // when the filter restaurant is empty
+  if (filteredRestaurants?.length === 0) {
+    return <h1>No results found sorry!!</h1>;
+  }
+
+  return allRestaurants?.length === 0 ? (
     <Shimmer />
   ) : (
     <>

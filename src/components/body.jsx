@@ -24,9 +24,13 @@ const Body = () => {
 
   async function getRestaurants() {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.2961189&lng=73.2034805&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.1939811&lng=72.9571294&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     // What's the reason??
+
+    // When we fetch the data from the api
+    // we are waiting for the data.
+    // if we don't use await while making the data into json then we can get error.
     const json = await data.json();
     // console.log(json.data.cards[4]);
 
@@ -45,9 +49,9 @@ const Body = () => {
   }
 
   // when the filter restaurant is empty
-  if (filteredRestaurants?.length === 0) {
-    return <h1>No results found sorry!!</h1>;
-  }
+  // if (filteredRestaurants?.length === 0) {
+  //   return <h1>No results found sorry!!</h1>;
+  // }
 
   return allRestaurants?.length === 0 ? (
     <Shimmer />
@@ -82,7 +86,10 @@ const Body = () => {
           <RestaurantCard {...RestaurantList[4].info} />
           <RestaurantCard {...RestaurantList[5].info} /> */}
 
-        {filteredRestaurants.map((restaurant) => {
+        {
+        filteredRestaurants?.length === 0?
+          <h1>No Search Result Found!!!</h1> :  
+        filteredRestaurants.map((restaurant) => {
           return (
             <RestaurantCard {...restaurant.info} key={restaurant.info.id} />
           );

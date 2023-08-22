@@ -7,10 +7,10 @@ import HeaderComponent from "./components/header";
 import Body from "./components/body";
 
 import Footer from "./components/footer";
-import About  from "./components/About";
+import About from "./components/About";
 import Error from "./components/Error";
 import Contact from "./components/Contact";
-import {createBrowserRouter,RouterProvider,Outlet  } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -50,43 +50,43 @@ const AppLayout = () => {
   return (
     <div>
       <HeaderComponent />
-      <Outlet/>
+      <Outlet />
       <Footer />
     </div>
   );
 };
 
-const appRouter=createBrowserRouter([
+const appRouter = createBrowserRouter([
   {
-    path:"/",
-    element:<AppLayout/>,
-    errorElement:<Error/>,
-    children:[
+    path: "/",
+    element: <AppLayout />,
+    errorElement: <Error />,
+    children: [
       {
-        path:"/about",
-        element:<About/>
+        path: "/about",
+        element: <About />,
       },
       {
-        path:"/contact",
+        path: "/contact",
         // This is a static route
-        element:<Contact/>
+        element: <Contact />,
       },
       {
-        path:"/",
-        element:<Body/>
+        path: "/",
+        element: <Body />,
       },
       {
-        path:"/restaurant/:id",
+        path: "/restaurant/:id",
         // When /: is used then it is a dynamic route
 
-        element:<RestaurantMenu/>
+        element: <RestaurantMenu />,
       },
     ],
   },
   {
-    path:"/about",
-    element:<About/>,
-  }
+    path: "/about",
+    element: <About />,
+  },
 ]);
 
 root.render(<RouterProvider router={appRouter} />);

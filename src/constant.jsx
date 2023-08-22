@@ -526,3 +526,6 @@ export const RestaurantList = [
 export const image_cdn =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 
+// https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.2961189&lng=73.2034805&restaurantId=169878
+
+// Restaurant menu data api

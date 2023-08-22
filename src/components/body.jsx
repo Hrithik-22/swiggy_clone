@@ -2,7 +2,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react"; /* This is named export */
 import SHimmer from "./shimmer";
-
+import { Link } from "react-router-dom";
 function filterData(searchText, restaurants) {
   const filters = restaurants.filter((restaurant) => {
     return restaurant.info.name
@@ -86,14 +86,20 @@ const Body = () => {
           <RestaurantCard {...RestaurantList[4].info} />
           <RestaurantCard {...RestaurantList[5].info} /> */}
 
-        {
-        filteredRestaurants?.length === 0?
-          <h1>No Search Result Found!!!</h1> :  
-        filteredRestaurants.map((restaurant) => {
-          return (
-            <RestaurantCard {...restaurant.info} key={restaurant.info.id} />
-          );
-        })}
+        {filteredRestaurants?.length === 0 ? (
+          <h1>No Search Result Found!!!</h1>
+        ) : (
+          filteredRestaurants.map((restaurant) => {
+            return (
+              <Link
+                key={restaurant.info.id}
+                to={"/restaurant/" + restaurant.info.id}
+              >
+                <RestaurantCard {...restaurant.info} />
+              </Link>
+            );
+          })
+        )}
       </div>
     </>
   );

@@ -7,6 +7,8 @@ import HeaderComponent from "./components/header";
 import Body from "./components/body";
 
 import Footer from "./components/footer";
+import About  from "./components/About";
+import {createBrowserRouter,RouterProvider } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -52,6 +54,17 @@ const AppLayout = () => {
   );
 };
 
-root.render(<AppLayout />);
+const appRouter=createBrowserRouter([
+  {
+    path:"/",
+    element:<AppLayout/>,
+  },
+  {
+    path:"/about",
+    element:<About/>,
+  }
+]);
+
+root.render(<RouterProvider router={appRouter} />);
 
 // React only tracks variables which are react state variables.

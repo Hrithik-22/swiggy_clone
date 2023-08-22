@@ -4,6 +4,7 @@
   align-items: center;
   border: 10px solid black;
   padding: 0.25rem;
+  margin-bottom: 1rem;
 }
 
 .nav-items > ul {
@@ -32,4 +33,12 @@
 .restaurantlist {
   display: flex;
   flex-wrap: wrap;
+}
+
+.shimmerCard{
+  width: 250px;
+  border: 1px solid black;
+  height: 400px;
+  background: lightgray;
+  margin: 10px;
 }

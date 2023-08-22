@@ -1,7 +1,7 @@
 // import { RestaurantList } from "../constant"; /* This is default export */
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react"; /* This is named export */
-import Shimmer from "./shimmer";
+import SHimmer from "./shimmer";
 
 function filterData(searchText, restaurants) {
   const filters = restaurants.filter((restaurant) => {
@@ -54,7 +54,7 @@ const Body = () => {
   // }
 
   return allRestaurants?.length === 0 ? (
-    <Shimmer />
+    <SHimmer />
   ) : (
     <>
       <div className="search-container">

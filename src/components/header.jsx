@@ -1,5 +1,5 @@
 import { useState } from "react"; /* This is named export */
-
+import Logo from "../assets/imgs/logo_food.png"; 
 
 
 const Title = () => {
@@ -7,7 +7,7 @@ const Title = () => {
     <a href="/">
       <img
         className="logo"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfTxOeXY1KFuFnRxeuRaCw21r8U5kZ2Bm6MA&usqp=CAU"
+        src={Logo}
       />
     </a>
   );

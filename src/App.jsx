@@ -8,6 +8,8 @@ import Body from "./components/body";
 
 import Footer from "./components/footer";
 import About  from "./components/About";
+import Error from "./components/Error";
+
 import {createBrowserRouter,RouterProvider } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -58,6 +60,7 @@ const appRouter=createBrowserRouter([
   {
     path:"/",
     element:<AppLayout/>,
+    errorElement:<Error/>,
   },
   {
     path:"/about",

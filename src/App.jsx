@@ -68,6 +68,7 @@ const appRouter=createBrowserRouter([
       },
       {
         path:"/contact",
+        // This is a static route
         element:<Contact/>
       },
       {
@@ -76,6 +77,8 @@ const appRouter=createBrowserRouter([
       },
       {
         path:"/restaurant/:id",
+        // When /: is used then it is a dynamic route
+
         element:<RestaurantMenu/>
       },
     ],

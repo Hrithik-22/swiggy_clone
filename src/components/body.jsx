@@ -89,10 +89,12 @@ const Body = () => {
         {filteredRestaurants?.length === 0 ? (
           <h1>No Search Result Found!!!</h1>
         ) : (
-          filteredRestaurants.map((restaurant,index) => {
+          filteredRestaurants.map((restaurant, index) => {
+            // console.log("Restaurant ID:", restaurant?.info?.id);
             return (
-             
-                <RestaurantCard {...restaurant.info} key={restaurant.info?.id} />
+              <Link to={"/restaurant/" + restaurant.info.id} key={index}>
+                <RestaurantCard {...restaurant.info} />
+              </Link>
             );
           })
         )}

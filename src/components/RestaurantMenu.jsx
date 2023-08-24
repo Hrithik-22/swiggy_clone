@@ -8,9 +8,9 @@ const RestaurantMenu = () => {
   const [restaurant, setRestaurant] = useState([]);
 
   useEffect(() => {
-    getRestaurantInfo;
+    getRestaurantInfo();
   }, []);
-  console.log("YES");
+  // console.log("YES");
 
   async function getRestaurantInfo() {
     const data = await fetch(

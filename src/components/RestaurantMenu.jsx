@@ -17,7 +17,7 @@ const RestaurantMenu = () => {
       `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.2961189&lng=73.2034805&restaurantId=${id}`
     );
     const json = await data.json();
-    console.log(json.data);
+    // console.log(json.data);
     setRestaurant(json);
   }
 
@@ -42,6 +42,13 @@ const RestaurantMenu = () => {
       <div>
         <h1>Menu</h1>
         {/* <ul>{Object.values(restaurant?.data?.cards[0])}</ul> */}
+        <ul>          
+            {restaurant?.data?.cards?.[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.map((list,index)=>{
+            return (list.card?.card?.itemCards?.map((list2,index2)=>{
+                return (<li key={index2}>{list2?.card?.info?.name}</li>);
+            }));
+          })}
+        </ul>
       </div>
     </div>
   );

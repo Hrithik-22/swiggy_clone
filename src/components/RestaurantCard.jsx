@@ -1,4 +1,4 @@
-import { image_cdn } from "../constant";
+import { IMG_CDN_URL } from "../constant";
 
 const RestaurantCard = ({
   name,
@@ -10,7 +10,7 @@ const RestaurantCard = ({
 }) => {
   return (
     <div className="card">
-      <img src={image_cdn + cloudinaryImageId} />
+      <img src={IMG_CDN_URL + cloudinaryImageId} />
       <h2>{name}</h2>
       <h3>{cuisines.join(",")}</h3>
       <h4>{sla.deliveryTime} mins</h4>

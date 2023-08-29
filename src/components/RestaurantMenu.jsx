@@ -1,25 +1,11 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
 import SHimmer from "./shimmer";
-import { image_cdn } from "../constant";
+import { IMG_CDN_URL } from "../constant";
+import useRestaurantMenu from "./utilis/useRestaurantMenu";
 const RestaurantMenu = () => {
   //  how to read dynamic url params
   const { id } = useParams();
-  const [restaurant, setRestaurant] = useState([]);
-
-  useEffect(() => {
-    getRestaurantInfo();
-  }, []);
-  // console.log("YES");
-
-  async function getRestaurantInfo() {
-    const data = await fetch(
-      `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.2961189&lng=73.2034805&restaurantId=${id}`
-    );
-    const json = await data.json();
-    // console.log(json.data);
-    setRestaurant(json);
-  }
+  const restaurant = useRestaurantMenu(id);
 
   return !restaurant ? (
     <SHimmer />
@@ -30,7 +16,7 @@ const RestaurantMenu = () => {
         <h2>{restaurant?.data?.cards?.[0]?.card?.card?.info?.name}</h2>
         <img
           src={
-            image_cdn +
+            IMG_CDN_URL +
             restaurant?.data?.cards?.[0]?.card?.card?.info.cloudinaryImageId
           }
         />
@@ -42,12 +28,14 @@ const RestaurantMenu = () => {
       <div>
         <h1>Menu</h1>
         {/* <ul>{Object.values(restaurant?.data?.cards[0])}</ul> */}
-        <ul>          
-            {restaurant?.data?.cards?.[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.map((list,index)=>{
-            return (list.card?.card?.itemCards?.map((list2,index2)=>{
-                return (<li key={index2}>{list2?.card?.info?.name}</li>);
-            }));
-          })}
+        <ul>
+          {restaurant?.data?.cards?.[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.map(
+            (list, index) => {
+              return list.card?.card?.itemCards?.map((list2, index2) => {
+                return <li key={index2}>{list2?.card?.info?.name}</li>;
+              });
+            }
+          )}
         </ul>
       </div>
     </div>

@@ -3,15 +3,8 @@ import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react"; /* This is named export */
 import SHimmer from "./shimmer";
 import { Link } from "react-router-dom";
-function filterData(searchText, restaurants) {
-  const filters = restaurants.filter((restaurant) => {
-    return restaurant.info.name
-      .toLowerCase()
-      .includes(searchText.toLowerCase());
-  });
-  return filters;
-}
-
+import { filterData } from "./utilis/helper";
+import useOnline from "./utilis/useOnline";
 const Body = () => {
   const [allRestaurants, AllSetRestaurants] = useState([]);
   const [searchText, setSearchTxt] = useState("");
@@ -48,6 +41,11 @@ const Body = () => {
     return null;
   }
 
+  const isOnline = useOnline();
+
+  if (!isOnline) {
+    return <h1>Oops!! You are not connected to any Network!!!</h1>;
+  }
   // when the filter restaurant is empty
   // if (filteredRestaurants?.length === 0) {
   //   return <h1>No results found sorry!!</h1>;

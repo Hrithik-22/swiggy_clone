@@ -28,6 +28,10 @@ const HeaderComponent = () => {
             </Link>
            </li>
           <li>Cart</li>
+          <li>
+            <Link to="/instamart"> Instamart
+            </Link>
+           </li>
         </ul>
       </div>
       {

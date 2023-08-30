@@ -44,7 +44,7 @@ const Body = () => {
   const isOnline = useOnline();
 
   if (!isOnline) {
-    return <h1>Oops!! You are not connected to any Network!!!</h1>;
+    return <h1>🔴Oops!! You are not connected to any Network!!!</h1>;
   }
   // when the filter restaurant is empty
   // if (filteredRestaurants?.length === 0) {

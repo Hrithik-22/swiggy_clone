@@ -1,18 +1,22 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 
 import ReactDOM from "react-dom/client";
 
 import HeaderComponent from "./components/header";
 
-import Body from "./components/body";
+// import Body from "./components/body";
 
 import Footer from "./components/footer";
 import About from "./components/About";
 import Error from "./components/Error";
 import Contact from "./components/Contact";
+import SHimmer from "./components/shimmer";
+// import Instamart from "./components/Instamart";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
 const root = ReactDOM.createRoot(document.getElementById("root"));
+const Body=lazy(()=>import("./components/body"));
+const Instamart=lazy(()=>import("./components/Instamart"));
 
 // const heading = React.createElement("h1", { id: "title" }, "Heading 1");
 // const heading2 = React.createElement("h2", { id: "title2" }, "Heading 2");
@@ -72,8 +76,20 @@ const appRouter = createBrowserRouter([
         element: <Contact />,
       },
       {
+        path: "/instamart",
+
+        element: 
+        <Suspense fallback={<SHimmer/>} >
+          <Instamart />
+        </Suspense>
+        ,
+      },
+      {
         path: "/",
-        element: <Body />,
+        element: 
+        <Suspense fallback={<SHimmer/>}>
+          <Body />
+        </Suspense>,
       },
       {
         path: "/restaurant/:id",
@@ -83,10 +99,7 @@ const appRouter = createBrowserRouter([
       },
     ],
   },
-  {
-    path: "/about",
-    element: <About />,
-  },
+  
 ]);
 
 root.render(<RouterProvider router={appRouter} />);

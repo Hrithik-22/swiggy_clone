@@ -55,16 +55,16 @@ const Body = () => {
     <SHimmer />
   ) : (
     <>
-      <div className="search-container">
+      <div className="bg-pink-50 py-4 my-2">
         <input
           type="text"
           placeholder="Search"
-          className="search-input"
+          className="mx-4"
           value={searchText}
           onChange={(e) => setSearchTxt(e.target.value)}
         ></input>
         <button
-          className="search-btn"
+          className="bg-purple-500 p-2 px-4 m-2 text-white rounded-md"
           onClick={() => {
             // need to filter the data
             const data = filterData(searchText, allRestaurants);

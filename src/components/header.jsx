@@ -7,7 +7,7 @@ const Title = () => {
   return (
     <Link>
       <img
-        className="logo"
+        className="h-24 p-2"
         src={Logo}
       />
     </Link>
@@ -17,18 +17,18 @@ const Title = () => {
 const HeaderComponent = () => {
   const [isLoggedIn,SetisLoggedIn] =useState(false);
   return (
-    <div className="flex">
+    <div className="flex justify-evenly bg-pink-50 shadow-md">
       <Title />
-      <div className="nav-items">
-        <ul>
-          <li> <Link to="/">Home</Link></li>
+      <div >
+        <ul className="flex my-8  ">
+          <li className="mx-2"> <Link to="/">Home</Link></li>
           <li><Link to="/about">About Us</Link></li>
-          <li>
+          <li className="mx-2">
             <Link to="/contact"> Contact
             </Link>
            </li>
-          <li>Cart</li>
-          <li>
+          <li className="mx-2">Cart</li>
+          <li className="mx-2">
             <Link to="/instamart"> Instamart
             </Link>
            </li>

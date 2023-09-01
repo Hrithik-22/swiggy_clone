@@ -64,7 +64,7 @@ const Body = () => {
           onChange={(e) => setSearchTxt(e.target.value)}
         ></input>
         <button
-          className="bg-purple-500 p-2 px-4 m-2 text-white rounded-md"
+          className="bg-purple-500 py-2 px-4 m-2 rounded-md"
           onClick={() => {
             // need to filter the data
             const data = filterData(searchText, allRestaurants);
@@ -75,7 +75,7 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className="restaurantlist">
+      <div className="flex flex-wrap justify-between mx-4 ">
         {/* <RestaurantCard restaurant={RestaurantList[0]} /> */}
         {/* <RestaurantCard {...RestaurantList[0].info} /> */}
         {/* <RestaurantCard {...RestaurantList[1].info} />

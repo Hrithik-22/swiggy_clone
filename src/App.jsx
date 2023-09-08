@@ -11,11 +11,12 @@ import About from "./components/About";
 import Error from "./components/Error";
 import Contact from "./components/Contact";
 import SHimmer from "./components/shimmer";
+import Body from "./components/body";
 // import Instamart from "./components/Instamart";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
 const root = ReactDOM.createRoot(document.getElementById("root"));
-const Body=lazy(()=>import("./components/body"));
+// const Body=lazy(()=>import("./components/body"));
 const Instamart=lazy(()=>import("./components/Instamart"));
 
 // const heading = React.createElement("h1", { id: "title" }, "Heading 1");

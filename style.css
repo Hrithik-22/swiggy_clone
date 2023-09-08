@@ -35,15 +35,17 @@
   width: 100%;
 }
 
-.restaurantlist {
-  display: flex;
-  flex-wrap: wrap;
-}
 
-.shimmerCard{
+
+ */
+ .shimmerCard{
   width: 250px;
   border: 1px solid black;
   height: 400px;
   background: lightgray;
   margin: 10px;
-} */
+}
+.restaurantlist {
+  display: flex;
+  flex-wrap: wrap;
+}

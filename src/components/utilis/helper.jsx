@@ -6,4 +6,3 @@ export function filterData(searchText, restaurants) {
   });
   return filters;
 }
-export default filterData;

@@ -1,7 +1,7 @@
-import { useState } from "react"; /* This is named export */
+import { useState,useContext } from "react"; /* This is named export */
 import Logo from "../assets/imgs/logo_food.png"; 
 import {Link } from "react-router-dom";
-
+import UserContext from "./utilis/UserContext";
 
 const Title = () => {
   return (
@@ -16,6 +16,7 @@ const Title = () => {
 
 const HeaderComponent = () => {
   const [isLoggedIn,SetisLoggedIn] =useState(false);
+  const {user}=useContext(UserContext);
   return (
     <div className="flex justify-evenly bg-pink-50 shadow-md">
       <Title />
@@ -34,6 +35,7 @@ const HeaderComponent = () => {
            </li>
         </ul>
       </div>
+      <h2 className="font-bold">{user.name}</h2>
       {
         isLoggedIn ? 
         ( <button onClick={ ()=>SetisLoggedIn(false)}>LogIN</button>) 

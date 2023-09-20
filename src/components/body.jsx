@@ -1,11 +1,13 @@
 // import { RestaurantList } from "../constant"; /* This is default export */
 import RestaurantCard from "./RestaurantCard";
-import { useState, useEffect } from "react"; /* This is named export */
+import { useState, useEffect, useContext } from "react"; /* This is named export */
 import SHimmer from "./shimmer";
+import UserContext from "./utilis/UserContext";
 import { Link } from "react-router-dom";
 import { filterData } from "./utilis/helper";
 import useOnline from "./utilis/useOnline";
 const Body = () => {
+  const {user,SetUser}=useContext(UserContext); 
   const [allRestaurants, AllSetRestaurants] = useState([]);
   const [searchText, setSearchTxt] = useState("");
   const [filteredRestaurants, FilteredSetRestaurants] = useState([]);
@@ -74,6 +76,26 @@ const Body = () => {
         >
           Search
         </button>
+        <input
+          type="text"
+          placeholder="Search"
+          className="mx-4"
+          value={user.name}
+          onChange={(e) => SetUser({
+            ...user,
+            name:e.target.value
+          })}
+        ></input>
+        <input
+          type="text"
+          placeholder="Search"
+          className="mx-4"
+          value={user.email}
+          onChange={(e) => SetUser({
+            ...user,
+            email:e.target.value
+          })}
+        ></input>
       </div>
       <div className="flex flex-wrap justify-between mx-4 ">
         {/* <RestaurantCard restaurant={RestaurantList[0]} /> */}

@@ -15,7 +15,7 @@ const RestaurantCard = ({
       <h2 className="font-bold text-xl">{name}</h2>
       <h4 className="">{cuisines.join(",")}</h4>
       <h4>{sla.deliveryTime} mins</h4>
-      <h5>{user.name}</h5>
+      <h5>{user.name}-{user.email}</h5>
 
     </div>
   );

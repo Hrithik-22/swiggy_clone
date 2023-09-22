@@ -2,6 +2,7 @@ import { useState,useContext } from "react"; /* This is named export */
 import Logo from "../assets/imgs/logo_food.png"; 
 import {Link } from "react-router-dom";
 import UserContext from "./utilis/UserContext";
+import { useSelector } from "react-redux";
 
 const Title = () => {
   return (
@@ -17,6 +18,7 @@ const Title = () => {
 const HeaderComponent = () => {
   const [isLoggedIn,SetisLoggedIn] =useState(false);
   const {user}=useContext(UserContext);
+  const cartItems=useSelector((store)=>store.cart.items);
   return (
     <div className="flex justify-evenly bg-pink-50 shadow-md">
       <Title />
@@ -28,11 +30,12 @@ const HeaderComponent = () => {
             <Link to="/contact"> Contact
             </Link>
            </li>
-          <li className="mx-2">Cart</li>
+          
           <li className="mx-2">
             <Link to="/instamart"> Instamart
             </Link>
            </li>
+           <li className="mx-2">Cart - {cartItems.length}</li>
         </ul>
       </div>
       <h2 className="font-bold">{user.name}</h2>

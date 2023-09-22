@@ -19,6 +19,8 @@ import RestaurantMenu from "./components/RestaurantMenu";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // const Body=lazy(()=>import("./components/body"));
 const Instamart=lazy(()=>import("./components/Instamart"));
+import { Provider } from "react-redux";
+import store from "./components/utilis/store";
 
 // const heading = React.createElement("h1", { id: "title" }, "Heading 1");
 // const heading2 = React.createElement("h2", { id: "title2" }, "Heading 2");
@@ -59,15 +61,18 @@ const AppLayout = () => {
     email:"hkedare@gmail.com",
   });
   return (
-    <UserContext.Provider value={
-      {
-        user:user,
-        SetUser:SetUser,
-    }}>
-      <HeaderComponent />
-      <Outlet />
-      <Footer />
-    </UserContext.Provider>
+    <Provider store={store} >
+        <UserContext.Provider value={
+              {
+                user:user,
+                SetUser:SetUser,
+            }}>
+              <HeaderComponent />
+              <Outlet />
+              <Footer />
+            </UserContext.Provider>
+    </Provider>
+    
   );
 };
 

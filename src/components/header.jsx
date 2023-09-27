@@ -19,6 +19,7 @@ const HeaderComponent = () => {
   const [isLoggedIn,SetisLoggedIn] =useState(false);
   const {user}=useContext(UserContext);
   const cartItems=useSelector((store)=>store.cart.items);
+  console.log(cartItems);
   return (
     <div className="flex justify-evenly bg-pink-50 shadow-md">
       <Title />
@@ -26,16 +27,18 @@ const HeaderComponent = () => {
         <ul className="flex my-8  ">
           <li className="mx-2"> <Link to="/">Home</Link></li>
           <li><Link to="/about">About Us</Link></li>
+            <Link to="/contact"> 
           <li className="mx-2">
-            <Link to="/contact"> Contact
-            </Link>
+          Contact
            </li>
+            </Link>
           
-          <li className="mx-2">
-            <Link to="/instamart"> Instamart
+            <Link to="/instamart"> 
+              <li className="mx-2">Instamart</li>
             </Link>
-           </li>
-           <li className="mx-2">Cart - {cartItems.length}</li>
+            <Link to="/cart"> 
+              <li className="mx-2">Cart-{cartItems.length}</li>
+            </Link>
         </ul>
       </div>
       <h2 className="font-bold">{user.name}</h2>

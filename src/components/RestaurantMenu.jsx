@@ -41,7 +41,7 @@ const RestaurantMenu = () => {
           {restaurant?.data?.cards?.[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.map(
             (list, index) => {
               return list.card?.card?.itemCards?.map((list2, index2) => {
-                return <li key={index2}>{list2?.card?.info?.name}-<button className="p-2 bg-green-100" onClick={()=>addFoodItem(list2?.card?.info?.name)}>Add Item</button></li>;
+                return <li key={index2}>{list2?.card?.info?.name}-<button className="p-2 bg-green-100" onClick={()=>addFoodItem(list2?.card?.info)}>Add Item</button></li>;
               });
             }
           )}

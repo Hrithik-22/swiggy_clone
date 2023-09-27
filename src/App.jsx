@@ -13,6 +13,7 @@ import Contact from "./components/Contact";
 import SHimmer from "./components/shimmer";
 import Body from "./components/body";
 import UserContext from "./components/utilis/UserContext";
+import Cart from "./components/Cart";
 // import Instamart from "./components/Instamart";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
@@ -90,6 +91,11 @@ const appRouter = createBrowserRouter([
         path: "/contact",
         // This is a static route
         element: <Contact />,
+      },
+      {
+        path: "/cart",
+        // This is a static route
+        element: <Cart />,
       },
       {
         path: "/instamart",

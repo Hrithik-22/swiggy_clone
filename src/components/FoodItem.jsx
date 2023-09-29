@@ -1,6 +1,4 @@
-import { useContext } from "react";
 import { IMG_CDN_URL } from "../constant";
-import UserContext from "./utilis/UserContext";
 
 const FoodItem = ({
   name,
@@ -8,7 +6,6 @@ const FoodItem = ({
   price,
   cloudinaryImageId,
 }) => {
-  const {user} =useContext(UserContext);
   return (
     <div className="w-72 shadow-xl bg-pink-50 p-8">
       <img src={IMG_CDN_URL + cloudinaryImageId} />
